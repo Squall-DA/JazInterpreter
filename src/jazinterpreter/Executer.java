@@ -193,7 +193,7 @@ public class Executer {
 
                 EnvironmentStack.push(newLocalEnv);
                 this.LMem = EnvironmentStack.peek().Memory;
-                this.RMem.putAll(EnvironmentStack.peek().parentMemory);
+                this.RMem = EnvironmentStack.peek().parentMemory;
             }
 
             else if(keyword.compareTo("call")==0)
@@ -213,14 +213,14 @@ public class Executer {
                 current = this.mainEnvironment.CommandList.get(j);
                 i = j;
                 isBranching = true;
-                this.LMem.putAll(EnvironmentStack.peek().parentMemory);
+                this.LMem = EnvironmentStack.peek().parentMemory;
                 this.RMem = EnvironmentStack.peek().Memory;
             }
 
             else if(keyword.compareTo("end")==0)
             {
-                this.LMem.putAll(EnvironmentStack.peek().parentMemory);
-                this.RMem.putAll(EnvironmentStack.peek().parentMemory);
+                this.LMem = EnvironmentStack.peek().parentMemory;
+                this.RMem = EnvironmentStack.peek().parentMemory;
                 EnvironmentStack.pop();
             }
             

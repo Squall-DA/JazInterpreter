@@ -15,7 +15,7 @@ public class JazInterpreter {
      */
     public static void main(String[] args) {
         Executer machineState = new Executer();
-        machineState.mainEnvironment.CommandList = Parser.ToCommands("/home/daniel/foo.jaz");
+        machineState.mainEnvironment.CommandList = Parser.ToCommands(args[0]);
         machineState.mainEnvironment.LabelLocations = Parser.GetLabelLocations(machineState.mainEnvironment.CommandList);
         
         machineState.ExecuteInstructions();

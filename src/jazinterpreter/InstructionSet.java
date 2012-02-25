@@ -200,7 +200,11 @@ public class InstructionSet {
     }
     
     public static void show(String input){
-        System.out.println(input);
+        if(input==null){
+            System.out.print("\n");
+        }else{
+            System.out.println(input);
+        }
     }
     
     //Control Flow
