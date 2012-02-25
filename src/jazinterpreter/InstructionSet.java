@@ -94,7 +94,7 @@ public class InstructionSet {
         nextTop = input.pop();
         b = Integer.parseInt(nextTop);
         
-        if(a < b)   result = 1;
+        if(b < a)   result = 1;
         else        result = 0;
         
         input.push(nextTop);
@@ -113,7 +113,7 @@ public class InstructionSet {
         nextTop = input.pop();
         b = Integer.parseInt(nextTop);
         
-        if(a <= b)  result = 1;
+        if(b <= a)  result = 1;
         else        result = 0;
         
         input.push(nextTop);
@@ -131,7 +131,7 @@ public class InstructionSet {
         nextTop = input.pop();
         b = Integer.parseInt(nextTop);
         
-        if(a > b)   result = 1;
+        if(b > a)   result = 1;
         else        result = 0;
         
         input.push(nextTop);
@@ -149,7 +149,7 @@ public class InstructionSet {
         nextTop = input.pop();
         b = Integer.parseInt(nextTop);
         
-        if(a >= b)  result = 1;
+        if(b >= a)  result = 1;
         else        result = 0;
         
         input.push(nextTop);
