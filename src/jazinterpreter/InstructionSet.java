@@ -217,7 +217,7 @@ public class InstructionSet {
         if(a == 1)
             return labelLocs.get(argument);
         else
-            return current++;
+            return ++current;
     }
     public static int goFalse(Stack<String> input, HashMap<String, Integer> labelLocs, String argument, int current){
         String top;
@@ -229,7 +229,7 @@ public class InstructionSet {
         if(a == 0)
             return labelLocs.get(argument);
         else
-            return current++;
+            return ++current;
     }
     
     
@@ -276,7 +276,10 @@ public class InstructionSet {
         input.pop();
     }
     public static void rvalue(Stack<String> input, HashMap<String, Integer> RMem, String var){
-        int value = RMem.get(var);
+        int value = 0;
+        if(RMem.containsKey(var)){
+            value = RMem.get(var);
+        }
         input.push(Integer.toString(value));
     }
     public static void lvalue(Stack<String> input, String var){

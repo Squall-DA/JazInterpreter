@@ -24,16 +24,19 @@ public class Parser {
             input = new Scanner (new File(fileName));
         
             while (input.hasNext()){
-                commands.add(new Node());
                 temp = input.nextLine();
-                temp.trim();
+                temp = temp.trim();
                 if(temp.contains(" ")){
+                    commands.add(new Node());
                     commands.get(i).setKeyword(temp.substring(0,temp.indexOf(" ")));
                     commands.get(i).setArgument(temp.substring(temp.indexOf(" ")+1));
                 }
-                else if(temp.equalsIgnoreCase("")){    i++; continue;}
+                else if(temp.equalsIgnoreCase("")){    
+                    continue;
+                }
                 
                 else{
+                    commands.add(new Node());
                     commands.get(i).setKeyword(temp);
                 }
                 i++;
